@@ -5,14 +5,14 @@ body{
     background-size: 100% 100%;
 }
 
-.title {
+.title_login {
     font-family: Georgia, serif;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 40px;
     text-align: center;
 }
   
-.main {
+.main_login {
     background-color: #FFFFFF;
     width: 400px;
     height: 300px;
@@ -51,7 +51,7 @@ body{
     font-family: 'Ubuntu', sans-serif;
 }
   
-form.form1 {
+form.form1_login {
     padding-top: 40px;
 }
   

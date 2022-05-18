@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { sendRequest } from "./SendRequest.js";
 import { useNavigate } from "react-router-dom";
 import "./styles/login.css";
+import axios from 'axios'
 
 export default function Login() {
     const [userLog, setUserLog] = useState(
@@ -11,26 +11,26 @@ export default function Login() {
     let navigate = useNavigate();
     const handleSubmit = (reg) => {
       reg.preventDefault();
-      const requestURL = "";
-  
-      sendRequest("POST", requestURL, null, null, userLog)
-        .then((data) => {
-          window.localStorage.setItem("userData", JSON.stringify(data));
-          alert("Success login.");
-          navigate("/service");
-        })
-        .catch((err) => {
-          alert(err["error"]);
-        });
+      const requestURL = "http://localhost:8000/login";
+      console.log(userLog)
+      axios.post(requestURL, userLog)
+      .then((res) => {
+        window.localStorage.setItem("userData", res.config.data);
+        alert("[SUCCESS]");
+        navigate("/home");
+      })
+      .catch((err) => {
+        alert(err.response.data);
+      });
     };
   
     return (
       <div className="materialContainer">
-        <div className="title">
+        <div className="title_login">
           <i>Login Form</i>
         </div>
-        <div className="main">
-        <form className="form1">
+        <div className="main_login">
+        <form className="form1_login">
           <input
             className="un"
             data-testid="username"

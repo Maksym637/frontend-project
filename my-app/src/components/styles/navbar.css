@@ -1,0 +1,29 @@
+.wrapper-top {
+    height: 100px;
+    max-width: 1170px;
+    margin: auto;
+}
+  
+.nav-area-r {
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+  
+.nav-area-l {
+    float: left;
+    list-style: none;
+    margin-top: 30px;
+}
+  
+.nav-area-li {
+    display: inline-block;
+}
+  
+.nav-area-li a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-size: 25px;
+    text-transform: uppercase;
+}
