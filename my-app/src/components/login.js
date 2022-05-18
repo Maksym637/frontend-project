@@ -12,7 +12,6 @@ export default function Login() {
     const handleSubmit = (reg) => {
       reg.preventDefault();
       const requestURL = "http://localhost:8000/login";
-      console.log(userLog)
       axios.post(requestURL, userLog)
       .then((res) => {
         window.localStorage.setItem("userData", res.config.data);

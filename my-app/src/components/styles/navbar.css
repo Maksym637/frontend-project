@@ -15,7 +15,15 @@
     list-style: none;
     margin-top: 30px;
 }
-  
+
+.nav-area-l-home {
+    color: black;
+    font-weight: bold;
+    float: left;
+    list-style: none;
+    margin-top: 30px;
+}
+
 .nav-area-li {
     display: inline-block;
 }

@@ -7,11 +7,14 @@ export default class Navbar extends Component {
     return (
       <div className="wrapper-top">
         <ul>
-          <li className="nav-area-l nav-area-li">
+          <li className="nav-area-l-home nav-area-li">
             <Link to="/home"><i>Home</i></Link>
           </li>
+          <li className="nav-area-l nav-area-li">
+            <Link to="/users"><i>Users</i></Link>
+          </li>
           <li className="nav-area-r nav-area-li">
-            <Link to="/user"><i>About User</i></Link>
+            <Link to="/profile"><i>About User</i></Link>
           </li>
           <li className="nav-area-r nav-area-li">
             <Link to="/login"><i>Log in</i></Link>
