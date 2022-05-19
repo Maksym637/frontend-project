@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./styles/profile.css";
 import axios from 'axios'
 
-export default function Userl() {
+export default function User() {
   const [user, setUser] = useState(
     JSON.parse(window.localStorage.getItem("userData")) || {}
   );
+
   const [oldUser, setOldUser] = useState(
     { oldPassword: user.password, oldUsername: user.username } || ""
   );
@@ -14,33 +15,34 @@ export default function Userl() {
   let navigate = useNavigate();
   const saveData = (e) => {
     e.preventDefault();
-    const requestURL = `http://localhost:5000/user/${oldUser.oldUsername}`;
-    // sendRequest(
-    //   "PUT",
-    //   requestURL,
-    //   oldUser.oldUsername,
-    //   oldUser.oldPassword,
-    //   user
-    // )
-    //   .then((data) => {
-    //     window.localStorage.setItem("userData", JSON.stringify(data));
-    //     setOldUser({ oldPassword: user.password, oldUsername: user.username });
-    //     alert("User data changed successfully.");
-    //   })
-    //   .catch((err) => alert(err["error"]));
+    const requestURL = 'http://localhost:8000/user';
+    const token = btoa(user.username + ':' + user.password);
+    axios.put(requestURL, user, {
+      headers: {
+        'Authorization': `Basic ${token}`
+      }
+    })
+    .then((data) => {
+      window.localStorage.setItem("userData", JSON.stringify(data));
+      setOldUser({ oldPassword: user.password, oldUsername: user.username });
+      alert("[USER UPDATED SUCCESSFULLY]");
+    })
+    .catch((err) => {
+      alert(err.response.data);
+    });
   };
 
   const logout = (out) => {
     out.preventDefault();
     setUser({
       username: undefined,
-      firstName: undefined,
-      lastName: undefined,
+      first_name: undefined,
+      last_name: undefined,
       email: undefined,
       password: undefined,
-      phoneNumber: undefined,
+      phone: undefined,
     });
-    alert("Logged out.");
+    alert("[YOU ARE LOGGED OUT]");
     window.localStorage.clear();
     navigate("/login");
   };
@@ -49,21 +51,29 @@ export default function Userl() {
     del.preventDefault();
     setUser({
       username: undefined,
-      firstName: undefined,
-      lastName: undefined,
+      first_name: undefined,
+      last_name: undefined,
       email: undefined,
       password: undefined,
-      phoneNumber: undefined,
+      phone: undefined,
     });
-    window.localStorage.clear();
-    const requestURL = `http://localhost:5000/user/${oldUser.oldUsername}`;
-    // sendRequest("DELETE", requestURL, oldUser.oldUsername, oldUser.oldPassword)
-    //   .then((data) => {
-    //     setOldUser({ oldPassword: undefined, oldUsername: undefined });
-    //     alert(data);
-    //   })
-    //   .catch((err) => alert(err["error"]));
-    // navigate("/login");
+    const requestURL = `http://localhost:8000/user/${oldUser.oldUsername}`;
+    const token = btoa(oldUser.oldUsername + ':' + oldUser.oldPassword);
+    axios.delete(requestURL, {
+      headers: {
+        'Authorization': `Basic ${token}`
+      }
+    })
+    .then((data) => {
+      window.localStorage.setItem("userData", JSON.stringify(data));
+      setOldUser({ oldPassword: undefined, oldUsername: undefined });
+      alert("[USER DELETED SUCCESSFULLY]");
+      window.localStorage.clear();
+    })
+    .catch((err) => {
+      alert(err.response.data);
+    });
+    navigate("/login");
   };
 
   return (
@@ -115,12 +125,12 @@ export default function Userl() {
                     type="text"
                     id="input-first-name"
                     className="form-control form-control-alternative"
-                    placeholder="First name"
-                    defaultValue={user?.firstName || ""}
+                    placeholder="Name"
+                    defaultValue={user?.first_name || ""}
                     onChange={(e) =>
                       setUser((prev) => ({
                         ...prev,
-                        firstName: e.target.value,
+                        first_name: e.target.value,
                       }))
                     }
                   />
@@ -133,10 +143,10 @@ export default function Userl() {
                     type="text"
                     id="input-last-name"
                     className="form-control form-control-alternative"
-                    placeholder="Last name"
-                    defaultValue={user?.lastName || ""}
+                    placeholder="Surname"
+                    defaultValue={user?.last_name || ""}
                     onChange={(e) =>
-                      setUser((prev) => ({ ...prev, lastName: e.target.value }))
+                      setUser((prev) => ({ ...prev, last_name: e.target.value }))
                     }
                   />
                 </div>
@@ -166,11 +176,11 @@ export default function Userl() {
                     id="input-phone"
                     className="form-control form-control-alternative"
                     placeholder="Phone"
-                    defaultValue={user?.phoneNumber || ""}
+                    defaultValue={user?.phone || ""}
                     onChange={(e) =>
                       setUser((prev) => ({
                         ...prev,
-                        phoneNumber: e.target.value,
+                        phone: e.target.value,
                       }))
                     }
                   />
