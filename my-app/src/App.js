@@ -4,6 +4,7 @@ import Login from './components/login';
 import LoginRoute from './components/loginroute';
 import Register from './components/register';
 import User from './components/profile';
+import Users from './components/users';
 import Home from './components/home';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/profile" element={<LoginRoute component={User} />} />
+                    <Route path="/users" element={<Users />} />
                     <Route path="/home" element={<Home />} />
                 </Routes>
             </BrowserRouter>

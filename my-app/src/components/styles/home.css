@@ -7,15 +7,15 @@
 
 .nav-button-center {
     font-family: serif;
-    font-size: 40px;
+    font-size: 25px;
     margin: 0 auto;
     display: block;
-    background-color: gainsboro;
+    background-color: white;
     border-color: black;
     border-style: solid;
     border-width: 1px;
     color: black;
-    border-radius: 20px;
+    border-radius: 40px;
     cursor: pointer;
     margin-top: 60px;
     padding-top: 9px;
@@ -29,6 +29,6 @@
 }
 
 .nav-button-center:hover{
-    background-color: rgba(128, 128, 128, 0.721);
+    background-color: #4b5595;
     color: white;
 }
