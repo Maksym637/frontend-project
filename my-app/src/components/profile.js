@@ -22,9 +22,8 @@ export default function User() {
                 Authorization: `Basic ${token}`,
             },
         })
-            .then(() => {
-                // data
-                // window.localStorage.setItem('userData', JSON.stringify(data));
+            .then((data) => {
+                window.localStorage.setItem('userData', JSON.stringify(data));
                 setOldUser({ oldPassword: user.password, oldUsername: user.username });
                 alert('[USER UPDATED SUCCESSFULLY]');
             })
@@ -65,8 +64,7 @@ export default function User() {
                 Authorization: `Basic ${token}`,
             },
         })
-            .then((data) => {
-                window.localStorage.setItem('userData', JSON.stringify(data));
+            .then(() => {
                 setOldUser({ oldPassword: undefined, oldUsername: undefined });
                 alert('[USER DELETED SUCCESSFULLY]');
                 window.localStorage.clear();
