@@ -5,22 +5,12 @@
     text-align: center;
 }
 
-.home-button {
-    cursor: pointer;
-    border-radius: 5em;
-    color: #fff;
-    background: #4b5595;
-    border: 0;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    font-family: 'Ubuntu', sans-serif;
-    margin-left: 46%;
-    margin-top: 20px;
-    font-size: 15px;
-    -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+.title_none {
+    font-family: Georgia, serif;
+    margin-top: 60px;
+    font-size: 40px;
+    text-align: center;
+    color: #4b5595;
 }
 
 .styled-table {
