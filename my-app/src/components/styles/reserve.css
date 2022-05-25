@@ -1,0 +1,16 @@
+.title-reserve {
+    font-family: Georgia, serif;
+    margin-top: -20px;
+    font-size: 40px;
+    text-align: center;
+  }
+
+.main-reserve {
+  background-color: #FFFFFF;
+  width: 400px;
+  height: 270px;
+  margin: 2em auto;
+  border-radius: 40px;
+  -webkit-box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}

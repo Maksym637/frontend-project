@@ -22,8 +22,9 @@ export default function User() {
                 Authorization: `Basic ${token}`,
             },
         })
-            .then((data) => {
-                window.localStorage.setItem('userData', JSON.stringify(data));
+            .then(() => {
+                // data
+                // window.localStorage.setItem('userData', JSON.stringify(data));
                 setOldUser({ oldPassword: user.password, oldUsername: user.username });
                 alert('[USER UPDATED SUCCESSFULLY]');
             })
