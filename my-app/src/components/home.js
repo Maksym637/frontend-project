@@ -15,7 +15,7 @@ export default function Home() {
                 <Link to="/reservation">
                     <button className="nav-button-center">Reservations</button>
                 </Link>
-                <Link to="/reservation">
+                <Link to="/book">
                     <button className="nav-button-center">Create Reservation</button>
                 </Link>
             </div>

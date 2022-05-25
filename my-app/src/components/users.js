@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './styles/users.css';
+import './styles/universal.css';
 import axios from 'axios';
 
 export default function Users() {

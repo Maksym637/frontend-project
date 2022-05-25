@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './styles/auditoriums.css';
+import './styles/universal.css';
 import axios from 'axios';
 
 export default function Auditoriums() {
@@ -14,11 +14,11 @@ export default function Auditoriums() {
     }, []);
     return (
         <div>
-            <div className="title-auditorium" >
+            <div className="title" >
                 <i>Auditoriums list</i>
             </div>
             <div>
-                <table className="styled-table-auditorium">
+                <table className="styled-table">
                     <thead>
                         <tr>
                             <th><i>Id</i></th>

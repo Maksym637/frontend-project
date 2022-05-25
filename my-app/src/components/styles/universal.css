@@ -1,11 +1,11 @@
-.title-auditorium {
+.title {
     font-family: Georgia, serif;
     margin-top: -20px;
     font-size: 40px;
     text-align: center;
 }
 
-.title-none-auditorium {
+.title_none {
     font-family: Georgia, serif;
     margin-top: 60px;
     font-size: 40px;
@@ -13,35 +13,36 @@
     color: #4b5595;
 }
 
-.styled-table-auditorium {
+.styled-table {
     border-collapse: collapse;
     margin: 25px 0;
     margin-left: auto;
     margin-right: auto;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
-    height: 100px;
+    min-width: 600px;
     text-align: center;
+    height: 100px;
     -webkit-box-shadow: 0, 0, 20px rgba(0, 0, 0, 0.15);
             box-shadow: 0, 0, 20px rgba(0, 0, 0, 0.15);
 }
   
-.styled-table-auditorium thead tr {
+.styled-table thead tr {
     background-color: #4b5595;
     color: #ffffff;
+    text-align: left;
     text-align: center;
 }
   
-.styled-table-auditorium th,
-.styled-table-auditorium td {
+.styled-table th,
+.styled-table td {
     padding: 12px 15px;
 }
   
-.styled-table-auditorium tr {
+.styled-table tbody tr {
     border-bottom: 1px solid #babec4;
 }
   
-.styled-table-auditorium tr:last-of-type {
+.styled-table tbody tr:last-of-type {
     border-bottom: 3px solid #4b5595;
 }
