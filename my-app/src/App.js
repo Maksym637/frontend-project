@@ -7,6 +7,7 @@ import User from './components/profile';
 import Users from './components/users';
 import Home from './components/home';
 import Auditoriums from './components/auditoriums';
+import Reservations from './components/reservations';
 import Reserve from './components/reserve';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/book" element={<LoginRoute component={Reserve} />} />
                     <Route path="/users" element={<Users />} />
                     <Route path="/auditorium" element={<Auditoriums />} />
+                    <Route path="/reservation" element={<Reservations />} />
                     <Route path="/home" element={<Home />} />
                 </Routes>
             </BrowserRouter>
