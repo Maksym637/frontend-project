@@ -6,6 +6,7 @@ import Register from './components/register';
 import User from './components/profile';
 import Users from './components/users';
 import Home from './components/home';
+import Auditoriums from './components/auditoriums';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/profile" element={<LoginRoute component={User} />} />
                     <Route path="/users" element={<Users />} />
+                    <Route path="/auditorium" element={<Auditoriums />} />
                     <Route path="/home" element={<Home />} />
                 </Routes>
             </BrowserRouter>

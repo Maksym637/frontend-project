@@ -1,0 +1,47 @@
+.title-auditorium {
+    font-family: Georgia, serif;
+    margin-top: -20px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.title-none-auditorium {
+    font-family: Georgia, serif;
+    margin-top: 60px;
+    font-size: 40px;
+    text-align: center;
+    color: #4b5595;
+}
+
+.styled-table-auditorium {
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    height: 100px;
+    text-align: center;
+    -webkit-box-shadow: 0, 0, 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0, 0, 20px rgba(0, 0, 0, 0.15);
+}
+  
+.styled-table-auditorium thead tr {
+    background-color: #4b5595;
+    color: #ffffff;
+    text-align: center;
+}
+  
+.styled-table-auditorium th,
+.styled-table-auditorium td {
+    padding: 12px 15px;
+}
+  
+.styled-table-auditorium tr {
+    border-bottom: 1px solid #babec4;
+}
+  
+.styled-table-auditorium tr:last-of-type {
+    border-bottom: 3px solid #4b5595;
+}
