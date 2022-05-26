@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './styles/reserve.css';
 import axios from 'axios';
 
@@ -39,63 +39,87 @@ export default function Reserve() {
             });
     };
 
-    // const DeleteData = (del) => {
-    //     del.preventDefault();
-    //     const requestURL = `http://localhost:8000/access/${accessCreate.auditorium_id}`;
-    //     const token = btoa(`${user.username}:${user.password}`);
-    //     axios.delete(requestURL, {
-    //         headers: {
-    //             Authorization: `Basic ${token}`,
-    //         },
-    //     })
-    //         .then(() => {
-    //             alert('[RESERVATION DELETED SUCCESSFULLY]');
-    //             navigate('/reservation');
-    //         })
-    //         .catch((err) => {
-    //             alert(err.response.data);
-    //         });
-    // };
+    const DeleteData = (del) => {
+        del.preventDefault();
+        const requestURL = `http://localhost:8000/access/${accessCreate.auditorium_id}`;
+        const token = btoa(`${user.username}:${user.password}`);
+        axios.delete(requestURL, {
+            headers: {
+                Authorization: `Basic ${token}`,
+            },
+        })
+            .then(() => {
+                alert('[RESERVATION DELETED SUCCESSFULLY]');
+            })
+            .catch((err) => {
+                alert(err.response.data);
+            });
+    };
 
     return (
         <form className="box-reserve">
             <div className="title-reserve">
-                <i>Create reservation</i>
+                <i>Reservation</i>
             </div>
             <div className="main-reserve">
                 <form className="form1-reserve">
+                    <br></br>
+                    <div className="input">
+                        <i>Input the auditorium id</i>
+                    </div>
                     <input
-                        className=""
-                        data-testid=""
-                        type=""
-                        name=""
-                        placeholder=""
+                        className="number-reserve"
+                        data-testid="input-number-reserve"
+                        type="text"
+                        placeholder="id"
                         required
                         onChange={(e) => setAccessCreate((prev) => ({ ...prev, auditorium_id: e.target.value }))
                         }
                     ></input>
+                    <div className="input">
+                        <i>Input the start time of reservation</i>
+                    </div>
                     <input
-                        className=""
-                        data-testid=""
-                        type=""
-                        name=""
-                        placeholder=""
+                        className="start-reserve"
+                        data-testid="input-start-reserve"
+                        type="text"
+                        placeholder="y-m-d h:m:s"
                         required
                         onChange={(e) => setAccessCreate((prev) => ({ ...prev, start: e.target.value }))
                         }
                     ></input>
+                    <div className="input">
+                        <i>Input the end time of reservation</i>
+                    </div>
                     <input
-                        className=""
-                        data-testid=""
-                        type=""
-                        name=""
-                        placeholder=""
+                        className="end-reserve"
+                        data-testid="input-end-reserve"
+                        type="text"
+                        placeholder="y-m-d h:m:s"
                         required
                         onChange={(e) => setAccessCreate((prev) => ({ ...prev, end: e.target.value }))
                         }
                     ></input>
-                    <button onClick={CreateData}>Reserve</button>
                 </form>
+                <div className="box">
+                    <input
+                        data-testid="submit"
+                        type="submit"
+                        name="submit"
+                        value="Reserve"
+                        onClick={CreateData}
+                    ></input>
+                    <input
+                        data-testid="submit"
+                        type="submit"
+                        name="submit"
+                        value="Delete reservation"
+                        onClick={DeleteData}
+                    ></input>
+                </div>
+                <div className="reservation">
+                    <Link to="/reservation">See all reservations</Link>
+                </div>
             </div>
         </form>
     );
