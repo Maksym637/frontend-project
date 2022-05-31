@@ -1,0 +1,4 @@
+> Run tests :
+npm run test
+> See coverage :
+npm test -- --coverage
