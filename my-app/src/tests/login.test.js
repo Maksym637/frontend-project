@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { expect, test } from '@jest/globals';
 import Login from '../components/login';
 
-test('renders login username', () => {
+test('test login username', () => {
     render(
         <BrowserRouter>
             <Login />
@@ -14,7 +14,7 @@ test('renders login username', () => {
     expect(inputUsername.value).toBe('U1');
 });
 
-test('rendes login password', () => {
+test('test login password', () => {
     render(
         <BrowserRouter>
             <Login />
@@ -25,7 +25,7 @@ test('rendes login password', () => {
     expect(inputPassword.value).toBe('111222');
 });
 
-test('renders login submit button', () => {
+test('test login submit button', () => {
     render(
         <BrowserRouter>
             <Login />

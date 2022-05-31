@@ -2,6 +2,6 @@ import { render } from '@testing-library/react';
 import { test } from '@jest/globals';
 import App from '../App';
 
-test('renders learn react lint', () => {
+test('test learn react lint', () => {
     render(<App />);
 });

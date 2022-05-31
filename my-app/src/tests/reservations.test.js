@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { test } from '@jest/globals';
-import Home from '../components/home';
+import Reservations from '../components/reservations';
 
-test('test home page', () => {
+test('test reservations page', () => {
     render(
         <BrowserRouter>
-            <Home />
+            <Reservations />
         </BrowserRouter>,
     );
 });

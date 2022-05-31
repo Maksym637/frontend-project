@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { expect, test } from '@jest/globals';
 import Navbar from '../components/navbar';
 
-test('renders navbar', () => {
+test('test navbar', () => {
     render(
         <BrowserRouter>
             <Navbar />
