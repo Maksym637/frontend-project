@@ -2,7 +2,7 @@
 - - -
 ### Linked projects
 #### [Back-End part](https://github.com/Maksym637/flask-project), [Test Automation part](https://github.com/Maksym637/selenium-testing-project)
-(Full project description you can find in **Back-End part**)
+(Full description you can find in **Back-End part**)
 - - - 
 ### Launch project
 - Clone a repository
